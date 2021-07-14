@@ -1,0 +1,11 @@
+.MyNavLink {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+}
+.active {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+}

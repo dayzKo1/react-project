@@ -1,0 +1,27 @@
+@import './variable';
+
+button:hover {
+    color: @primary-color;
+    cursor: pointer;
+}
+button {
+    margin-left: 10px;
+}
+button:disabled:hover {
+    cursor: not-allowed
+}
+.disabled {
+    opacity: 0.5;
+}
+.disabled:hover {
+    cursor: not-allowed
+}
+
+.MyNav:hover{
+    text-decoration: none;
+    color: @primary-color;
+}
+.tab-list:hover{
+    text-decoration: none;
+    color: @primary-color;
+}
