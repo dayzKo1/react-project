@@ -44,6 +44,11 @@
     "deploy": "gh-pages -d dist",
     "lint:fix": "eslint --fix src"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint-staged"
+    }
+  },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": "eslint --ext .js,.jsx,.tsx,.ts"
   },
