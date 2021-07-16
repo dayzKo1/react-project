@@ -5,7 +5,7 @@ import { faUsers, faStar, faShareAlt, faExclamation, } from "@fortawesome/free-s
 import "@/css/MyCard.css";
 export default class MyCard extends Component {
   openNewPage = () => {
-    wi123ndow.open(this.props.htmlUrl);
+    window.open(this.props.htmlUrl);
   };
   render() {
     const {
