@@ -2,7 +2,7 @@ import React, { Component } from "react"
 import axios from "axios";
 import MyCard from "../components/MyCard.jsx";
 import { Container, Row, Col, Button } from 'react-bootstrap';
-import "../css/BattleResult.css";
+import "@/css/BattleResult.css";
 //比较结果展示
 export default class BattleResult extends Component {
   constructor(props) {

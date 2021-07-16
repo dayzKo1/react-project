@@ -3,7 +3,7 @@ import axios from "axios";
 import { NavLink } from "react-router-dom";
 import InfiniteScroll from "react-infinite-scroller";
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
-import MyCard from "../components/MyCard.jsx";
+import MyCard from "@/components/MyCard.jsx";
 export default class Popular extends Component {
   constructor(props) {
     super(props);

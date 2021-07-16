@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
-import '../css/Header.css'
+import '@/css/Header.css'
 import { Container } from 'react-bootstrap';
 
 //头部的链接：Popular Battle

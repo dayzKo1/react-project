@@ -4,7 +4,7 @@ import { NavLink } from "react-router-dom";
 import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faFighterJet, faTrophy } from "@fortawesome/free-solid-svg-icons";
-import '../css/Battle.css'
+import '@/css/Battle.css'
 //初始页面
 class BattleBegin extends Component {
   constructor(props) {
