@@ -3,7 +3,6 @@ import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faStar, faShareAlt, faExclamation, } from "@fortawesome/free-solid-svg-icons";
 import "@/css/MyCard.css";
-
 export default class MyCard extends Component {
   openNewPage = () => {
     window.open(this.props.htmlUrl);

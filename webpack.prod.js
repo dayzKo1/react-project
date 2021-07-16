@@ -22,14 +22,6 @@ module.exports = function (env, argv) {
     },
     module: {
       rules: [
-        {
-          test: /\.css$/,
-          use: ["style-loader", "css-loader"]
-        },
-        {
-          test: /\.less$/,
-          use: ["style-loader", "css-loader", "less-loader"],
-        },
         // rules: [{
         //   test: /\.css$/,
         //   include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
@@ -66,6 +58,14 @@ module.exports = function (env, argv) {
         //   use: ["style-loader", "css-loader?modules", "less-loader"]
         //         use: [MiniCssExtractPlugin.loader, "css-loader?modules", "postcss-loader", "less-loader"]
         // },
+        {
+          test: /\.css$/,
+          use: ["style-loader", "css-loader"]
+        },
+        {
+          test: /\.less$/,
+          use: ["style-loader", "css-loader", "less-loader"],
+        },
         {
           test: /\.(js|jsx)$/,
           exclude: /node_modules/,

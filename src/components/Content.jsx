@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { Switch, Route, Redirect } from "react-router-dom";
 import Popular from '@/pages/Popular.jsx';
-import Battle from '@/pages/Battle.jsx';
 import BattleResult from '@/pages/BattleResult.jsx';
+import Battle from '@/pages/Battle.jsx';
 //内容部分
 export default class Content extends Component {
   render() {
