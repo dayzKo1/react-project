@@ -25,3 +25,35 @@ button:disabled:hover {
     text-decoration: none;
     color: @primary-color;
 }
+.MyNavLink {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+    text-decoration: none;
+}
+.active {
+    color: black;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.btn_input{
+    margin-right: 10px;
+}
+
+@media (min-width:576px) {
+    .MyCard .Card {
+    height: 445px;
+    font-size: 14px;
+    }
+    .MyCard:hover{
+        animation:shadow-drop-center .4s cubic-bezier(.25,.46,.45,.94) both;
+        transform: scale(1.07);
+        cursor: pointer;
+    }
+    @keyframes shadow-drop-center{
+        0%{box-shadow:0 0 0 0 transparent}100%{box-shadow:0 0 20px 0 rgba(0,0,0,.35)}
+    }
+}
+// .BattleResult img{
+//     height: 400px;
+// }

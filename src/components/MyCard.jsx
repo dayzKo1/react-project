@@ -2,7 +2,6 @@ import React, { Component } from 'react'
 import { Card } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faStar, faShareAlt, faExclamation, } from "@fortawesome/free-solid-svg-icons";
-import "@/css/MyCard.css";
 export default class MyCard extends Component {
   openNewPage = () => {
     window.open(this.props.htmlUrl);
@@ -17,7 +16,7 @@ export default class MyCard extends Component {
       openIssuesCount,
     } = this.props;
     return (
-      <div className="MyCard" onClick={this.openNewPage} title={name}>
+      <div className="MyCard hoverable" onClick={this.openNewPage} title={name}>
         <Card className="Card" style={{ marginBottom: 30, backgroundColor: '#b8e2f2' }}>
           <div className="CardNum" style={{ textAlign: 'center' }}>#{listNum}</div>
           <Card.Img className="CardImg img-fluid img-thumbnail lazyload" style={{ width: '100%', padding: 20 }} variant="top" data-src={avatar} />
@@ -49,7 +48,7 @@ export default class MyCard extends Component {
 }
 MyCard.defaultProps = {
   listNum: '???',
-  avatar: 'https://avatars.githubusercontent.com/u/63722633?v=4',
+  avatar: '???',
   name: '???',
   starsCount: '???',
   forksCount: '???',

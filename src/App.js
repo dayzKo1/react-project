@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import Header from "./components/Header.jsx"
-import Content from "./components/Content.jsx"
+import Header from "@/components/Header.jsx"
+import Content from "@/components/Content.jsx"
 
 export default class App extends Component {
   constructor(props) {

@@ -222,7 +222,7 @@ export default class Popular extends Component {
                       key={index}
                       listNum={++index}
                       avatar={item.owner.avatar_url}
-                      name={item.name}
+                      name={item.owner.login}
                       starsCount={item.stargazers_count}
                       forksCount={item.forks_count}
                       openIssuesCount={item.open_issues_count}

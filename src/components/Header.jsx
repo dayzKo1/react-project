@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { NavLink } from "react-router-dom";
 import { Container } from 'react-bootstrap';
-import '@/css/Header.css'
 //头部的链接：Popular Battle
 class LinkList extends Component {
     render() {

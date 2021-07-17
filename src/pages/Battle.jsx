@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import { Container, Row, Col, Button, Spinner } from 'react-bootstrap';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUsers, faFighterJet, faTrophy } from "@fortawesome/free-solid-svg-icons";
-import '@/css/Battle.css'
 //初始页面
 class BattleBegin extends Component {
   constructor(props) {
@@ -281,7 +280,7 @@ class BattleBegin extends Component {
               ) : (
                 <div style={{}}>
                   <input
-                      className="btn_input"
+                    className="btn_input"
                     ref="inputTwo"
                     placeholder="输入Player Two"
                     onChange={this.twoInputChange}

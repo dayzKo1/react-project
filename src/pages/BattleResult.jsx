@@ -1,8 +1,9 @@
 import React, { Component } from "react"
 import axios from "axios";
-import MyCard from "../components/MyCard.jsx";
-import { Container, Row, Col, Button } from 'react-bootstrap';
-import "@/css/BattleResult.css";
+import MyCard from "@/components/MyCard.jsx";
+import { Card, Container, Row, Col, Button } from 'react-bootstrap';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faUsers, faStar, faShareAlt, faExclamation, } from "@fortawesome/free-solid-svg-icons";
 //比较结果展示
 export default class BattleResult extends Component {
   constructor(props) {
@@ -83,39 +84,69 @@ export default class BattleResult extends Component {
   render() {
     const { playerOne, playerTwo, winner } = this.state;
     return (
-      <Container className="BattleRusult">
+      <Container>
         <Row>
           <Col lg={6} md={6} sm={6}>
-            <MyCard
-              listNum={
-                winner === playerOne.name
-                  ? "Winner"
-                  : winner === ""
-                    ? "Draw"
-                    : "Loser"
-              }
-              name={playerOne.name}
-              avatar={playerOne.owner.avatar_url}
-              starsCount={playerOne.stargazers_count}
-              forksCount={playerOne.forks_count}
-              openIssuesCount={playerOne.open_issues_count}
-            />
+            <Card className="Card" style={{ marginBottom: 30, backgroundColor: '#b8e2f2' }}>
+              <div className="CardNum" style={{ textAlign: 'center' }}>#{winner === playerOne.name
+                ? "Winner"
+                : winner === ""
+                  ? "Draw"
+                  : "Loser"}</div>
+              <Card.Img className="CardImg img-fluid img-thumbnail" style={{ width: '100%', padding: 20 }} variant="top" src={playerOne.owner.avatar_url} />
+              <Card.Body>
+                <Card.Title className="CardTitle" style={{ textAlign: 'center', fontSize: 15, color: 'red', textTransform: 'uppercase' }}>{name}</Card.Title>
+                <div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#ffbf74', width: 20 }} icon={faUsers} />
+                    <span> {playerOne.owner.login} </span>
+                  </div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#ffd700', width: 20 }} icon={faStar} />
+                    <span>{playerOne.stargazers_count} stars</span>
+                  </div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#82c3f5', width: 20 }} icon={faShareAlt} />
+                    <span>{playerOne.forks_count} forks</span>
+                  </div>
+                  <div>
+                    <FontAwesomeIcon style={{ color: '#f18a92', width: 20 }} icon={faExclamation} />
+                    <span>{playerOne.open_issues_count} open Issues</span>
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
           </Col>
           <Col lg={6} md={6} sm={6}>
-            <MyCard
-              listNum={
-                winner === playerTwo.name
-                  ? "Winner"
-                  : winner === ""
-                    ? "Draw"
-                    : "Loser"
-              }
-              name={playerTwo.name}
-              avatar={playerTwo.owner.avatar_url}
-              starsCount={playerTwo.stargazers_count}
-              forksCount={playerTwo.forks_count}
-              openIssuesCount={playerTwo.open_issues_count}
-            />
+            <Card className="Card" style={{ marginBottom: 30, backgroundColor: '#b8e2f2' }}>
+              <div className="CardNum" style={{ textAlign: 'center' }}>#{winner === playerTwo.name
+                ? "Winner"
+                : winner === ""
+                  ? "Draw"
+                  : "Loser"}</div>
+              <Card.Img className="CardImg img-fluid img-thumbnail" style={{ width: '100%', padding: 20 }} variant="top" src={playerTwo.owner.avatar_url} />
+              <Card.Body>
+                <Card.Title className="CardTitle" style={{ textAlign: 'center', fontSize: 15, color: 'red', textTransform: 'uppercase' }}>{name}</Card.Title>
+                <div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#ffbf74', width: 20 }} icon={faUsers} />
+                    <span> {playerTwo.owner.login} </span>
+                  </div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#ffd700', width: 20 }} icon={faStar} />
+                    <span>{playerTwo.stargazers_count} stars</span>
+                  </div>
+                  <div style={{ marginBottom: "5px" }}>
+                    <FontAwesomeIcon style={{ color: '#82c3f5', width: 20 }} icon={faShareAlt} />
+                    <span>{playerTwo.forks_count} forks</span>
+                  </div>
+                  <div>
+                    <FontAwesomeIcon style={{ color: '#f18a92', width: 20 }} icon={faExclamation} />
+                    <span>{playerTwo.open_issues_count} open Issues</span>
+                  </div>
+                </div>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
         <div style={{ textAlign: 'center', marginTop: 50 }}>
