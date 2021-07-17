@@ -1,6 +1,7 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const { resolve } = require("path");
+const webpack = require('webpack')
 module.exports = function (env, argv) {
   const isEnvDevelopment = argv.mode === "development" || !argv.mode;
   const isEnvProduction = argv.mode === "production";
@@ -8,7 +9,7 @@ module.exports = function (env, argv) {
     mode: isEnvDevelopment ? 'production' : isEnvDevelopment && 'development',
     devtool: isEnvProduction ? 'source-map' : isEnvDevelopment && 'cheap-module-source-map',
     output: {
-      filename: `bundle.[contenthash:8].js`,
+      filename: `bundle.js`,
       path: path.resolve(__dirname, "dist")
     },
     module: {
@@ -19,30 +20,21 @@ module.exports = function (env, argv) {
         use: ["style-loader", "css-loader"]
       },
       {
-        test: /\.less$/,
-        include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
-        use: ["style-loader", "css-loader", "less-loader"],
-      },
-      {
         test: /\.css$/,
         exclude: [path.resolve(__dirname, 'src/css'), /node_modules/],
         use: ["style-loader", "css-loader?modules"]
       },
       {
         test: /\.less$/,
-        exclude: [path.resolve(__dirname, 'src/styles'), /node_modules/],
+        include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
         use: ["style-loader", "css-loader", "less-loader"],
       },
-      //   {
-      //   test: /\.css$/,
-      //   include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
-      //   use: ["style-loader", "css-loader"]
-      // },
-      // {
-      //   test: /\.css$/,
-      //   exclude: [path.resolve(__dirname, 'src/styles'), /node_modules/],
-      //   use: ["style-loader", "css-loader?modules"]
-      // },
+
+      {
+        test: /\.less$/,
+        exclude: [path.resolve(__dirname, 'src/styles'), /node_modules/],
+        use: ["style-loader", "css-loader?modules", "less-loader"],
+      },
       // {
       //   test: /\.scss$/,
       //   include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
@@ -54,15 +46,6 @@ module.exports = function (env, argv) {
       //   use: ["style-loader", "css-loader?modules", "sass-loader"]
       // },
       // {
-      //   test: /\.less$/,
-      //   include: [path.resolve(__dirname, 'src/styles'), /node_modules/],
-      //   use: ["style-loader", "css-loader", "less-loader"]
-      // },
-      // {
-      //   test: /\.less$/,
-      //   exclude: [path.resolve(__dirname, 'src/styles'), /node_modules/],
-      //   use: ["style-loader", "css-loader?modules", "less-loader"]
-      // },
       {
         test: /\.(js|jsx)$/,
         exclude: /node_modules/,
@@ -94,12 +77,15 @@ module.exports = function (env, argv) {
     },
     devServer: {
       contentBase: "./dist",
+      hot: true
     },
     plugins: [
       new HtmlWebpackPlugin({
         filename: "index.html",
         template: "./public/index.html",
-      })
+      }),
+      new webpack.NamedChunksPlugin(),
+      new webpack.HotModuleReplacementPlugin()
     ],
   };
 }

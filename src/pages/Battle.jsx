@@ -216,8 +216,8 @@ class BattleBegin extends Component {
                   <span>playerName:{playerOne.name}</span>
                   <div>
                     <img
-                      className="img-thumbnail"
-                      src={playerOne.owner.avatar_url}
+                      className="img-thumbnail lazyload"
+                      data-src={playerOne.owner.avatar_url}
                       alt={playerOne.name}
                       style={{ height: 100, width: 100 }}
                     />
@@ -266,8 +266,8 @@ class BattleBegin extends Component {
                   <span>playerName:{playerTwo.name}</span>
                   <div>
                     <img
-                      className="img-thumbnail"
-                      src={playerTwo.owner.avatar_url}
+                      className="img-thumbnail lazyload"
+                      data-src={playerTwo.owner.avatar_url}
                       alt={playerTwo.name}
                       style={{ height: 100, width: 100 }}
                     />

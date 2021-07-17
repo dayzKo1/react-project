@@ -20,7 +20,7 @@ export default class MyCard extends Component {
       <div className="MyCard" onClick={this.openNewPage} title={name}>
         <Card className="Card" style={{ marginBottom: 30, backgroundColor: '#b8e2f2' }}>
           <div className="CardNum" style={{ textAlign: 'center' }}>#{listNum}</div>
-          <Card.Img className="CardImg img-fluid img-thumbnail" style={{ width: '100%', padding: 20 }} variant="top" src={avatar} />
+          <Card.Img className="CardImg img-fluid img-thumbnail lazyload" style={{ width: '100%', padding: 20 }} variant="top" data-src={avatar} />
           <Card.Body>
             <Card.Title className="CardTitle" style={{ textAlign: 'center', fontSize: 15, color: 'red', textTransform: 'uppercase' }}>{name}</Card.Title>
             <div>
