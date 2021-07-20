@@ -185,7 +185,7 @@ class BattleBegin extends Component {
       );
     }
     return (
-      <Container>
+      <Container className="instr">
         <h1 style={{ textAlign: 'center', marginBottom: 30 }}>Instructions</h1>
         <Row style={{ textAlign: 'center', marginBottom: 30 }}>
           <Col lg={4} md={4} sm={6}>
@@ -300,7 +300,7 @@ class BattleBegin extends Component {
           </Col>
         </Row>
 
-        <div style={{ textAlign: 'center' }}>
+        <div style={{ textAlign: 'center', marginTop: 50 }}>
 
           <NavLink
             to={{
